@@ -1,0 +1,1202 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Glog.AI",
+          "organization": "Glog.AI",
+          "fullName": "Glog, Making software more secure",
+          "version": "1.0.0",
+          "semanticVersion": "1.0.0",
+          "informationUri": "https://www.glog.ai",
+          "rules": [
+            {
+              "id": "glog-935f75c5-3ef5-4a75-a703-1693afe5bde8",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe vulnerability in question is related to the `malloc` function in C++. `malloc` is a function that dynamically allocates memory at runtime. The vulnerability arises when the size of the memory to be allocated is not properly validated or calculated, leading to buffer overflow, memory corruption, or other related issues.\n\nIn the given code snippet, `malloc(DIM * sizeof(float))`, the vulnerability could arise if the value of `DIM` is not properly validated or controlled. If `DIM` is a very large value, it could lead to a buffer overflow or memory exhaustion. If `DIM` is a negative value, it could lead to memory corruption.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, you should always validate and control the size of the memory to be allocated. Ensure that the value of `DIM` is within a safe range before passing it to `malloc`. Also, always check the return value of `malloc` to ensure that the memory allocation was successful.\n\n## Source Code Fix Recommendation\n\nHere is a recommended fix for the code:\n\n```cpp\n#include <stdlib.h>\n\n#define MAX_DIM 1000000 // Define a maximum safe value for DIM\n\n// ...\n\nint DIM = /* some value */;\nif (DIM < 0 || DIM > MAX_DIM) {\n    // Handle error: DIM is out of range\n} else {\n    float* array = (float*) malloc(DIM * sizeof(float));\n    if (array == NULL) {\n        // Handle error: malloc failed\n    } else {\n        // Use array...\n        free(array); // Don't forget to free the memory when you're done\n    }\n}\n```\n\n## Library Dependencies\n\nThe code example requires the `stdlib.h` library for the `malloc` and `free` functions.\n\n## OWASP Resources\n\n- [OWASP C/C++ Vulnerability Guide](https://owasp.org/www-pdf-archive/OWASP_SCP_Quick_Reference_Guide_v2.pdf)\n\n## Common Weakness Enumeration (CWE)\n\n- [CWE-131: Incorrect Calculation of Buffer Size](https://cwe.mitre.org/data/definitions/131.html)\n- [CWE-680: Integer Overflow to Buffer Overflow](https://cwe.mitre.org/data/definitions/680.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-5b3e863c-c360-484e-9118-6d373a2d3514",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe vulnerability in question is related to the `malloc` function in C++. `malloc` is a function that dynamically allocates memory at runtime. The vulnerability arises when the size of the memory to be allocated is not properly validated or calculated, leading to buffer overflow, memory corruption, or other related issues.\n\nIn the given code snippet, `malloc(DIM * sizeof(float))`, the vulnerability could arise if the value of `DIM` is not properly validated or controlled. If `DIM` is a very large value, it could lead to a buffer overflow or memory exhaustion. If `DIM` is a negative value, it could lead to memory corruption.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, you should always validate and control the size of the memory to be allocated. Ensure that the value of `DIM` is within a safe range before passing it to `malloc`. Also, always check the return value of `malloc` to ensure that the memory allocation was successful.\n\n## Source Code Fix Recommendation\n\nHere is a recommended fix for the code:\n\n```cpp\n#include <stdlib.h>\n\n#define MAX_DIM 1000000 // Define a maximum safe value for DIM\n\n// ...\n\nint DIM = /* some value */;\nif (DIM < 0 || DIM > MAX_DIM) {\n    // Handle error: DIM is out of range\n} else {\n    float* array = (float*) malloc(DIM * sizeof(float));\n    if (array == NULL) {\n        // Handle error: malloc failed\n    } else {\n        // Use array...\n        free(array); // Don't forget to free the memory when you're done\n    }\n}\n```\n\n## Library Dependencies\n\nThe code example requires the `stdlib.h` library for the `malloc` and `free` functions.\n\n## OWASP Resources\n\n- [OWASP C/C++ Vulnerability Guide](https://owasp.org/www-pdf-archive/OWASP_SCP_Quick_Reference_Guide_v2.pdf)\n\n## Common Weakness Enumeration (CWE)\n\n- [CWE-131: Incorrect Calculation of Buffer Size](https://cwe.mitre.org/data/definitions/131.html)\n- [CWE-680: Integer Overflow to Buffer Overflow](https://cwe.mitre.org/data/definitions/680.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-18fd05af-d2f6-48ef-af0d-2cf4c18add17",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe vulnerability in question is related to the `malloc` function in C++. `malloc` is a function that dynamically allocates memory at runtime. The vulnerability arises when the size of the memory to be allocated is not properly validated or calculated, leading to buffer overflow, memory corruption, or other related issues.\n\nIn the given code snippet, `malloc(DIM * sizeof(float))`, the vulnerability could arise if the value of `DIM` is not properly validated or controlled. If `DIM` is a very large value, it could lead to a buffer overflow or memory exhaustion. If `DIM` is a negative value, it could lead to memory corruption.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, you should always validate and control the size of the memory to be allocated. Ensure that the value of `DIM` is within a safe range before passing it to `malloc`. Also, always check the return value of `malloc` to ensure that the memory allocation was successful.\n\n## Source Code Fix Recommendation\n\nHere is a recommended fix for the code:\n\n```cpp\n#include <stdlib.h>\n\n#define MAX_DIM 1000000 // Define a maximum safe value for DIM\n\n// ...\n\nint DIM = /* some value */;\nif (DIM < 0 || DIM > MAX_DIM) {\n    // Handle error: DIM is out of range\n} else {\n    float* array = (float*) malloc(DIM * sizeof(float));\n    if (array == NULL) {\n        // Handle error: malloc failed\n    } else {\n        // Use array...\n        free(array); // Don't forget to free the memory when you're done\n    }\n}\n```\n\n## Library Dependencies\n\nThe code example requires the `stdlib.h` library for the `malloc` and `free` functions.\n\n## OWASP Resources\n\n- [OWASP C/C++ Vulnerability Guide](https://owasp.org/www-pdf-archive/OWASP_SCP_Quick_Reference_Guide_v2.pdf)\n\n## Common Weakness Enumeration (CWE)\n\n- [CWE-131: Incorrect Calculation of Buffer Size](https://cwe.mitre.org/data/definitions/131.html)\n- [CWE-680: Integer Overflow to Buffer Overflow](https://cwe.mitre.org/data/definitions/680.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-848a7db5-af9b-40b0-9190-d1360509dac8",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe vulnerability in question is related to the `malloc` function in C++. This function is used to dynamically allocate memory at runtime. The issue arises when the size of the memory to be allocated is not properly calculated or validated, leading to potential buffer overflows, memory corruption, or other undefined behaviors. In the provided code snippet, the size of the memory to be allocated is calculated as `DIM * sizeof(float *)`. If `DIM` is not properly validated, it could lead to the allocation of an unexpected amount of memory, causing the aforementioned issues.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to:\n\n1. Always validate the size of the memory to be allocated. Ensure that it is within the expected range and does not lead to excessive memory allocation.\n2. Use functions that limit the amount of memory allocated, such as `calloc`, which initializes the allocated memory to zero.\n3. Consider using modern C++ features such as smart pointers (`std::unique_ptr`, `std::shared_ptr`) which automatically manage memory and help prevent memory-related issues.\n\n## Source Code Fix Recommendation\n\nHere is a recommended fix for the provided code snippet:\n\n```cpp\n#include <cstdlib> // for malloc and free\n#include <climits> // for INT_MAX\n\n#define DIM 100 // or any other value\n\n// Check if the size calculation would overflow\nif (DIM > INT_MAX / sizeof(float *)) {\n    // Handle error\n} else {\n    float **array = (float **)malloc(DIM * sizeof(float *));\n    if (array == NULL) {\n        // Handle error\n    } else {\n        // Use array\n        // ...\n\n        // Don't forget to free the memory\n        free(array);\n    }\n}\n```\n\n## Library Dependencies\n\nThe code example requires the following library dependencies:\n\n- `<cstdlib>`: This header file is required for the `malloc` and `free` functions.\n- `<climits>`: This header file is required for the `INT_MAX` constant.\n\n## References\n\n- [CWE-131: Incorrect Calculation of Buffer Size](https://cwe.mitre.org/data/definitions/131.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-9f2df9ea-ce17-462b-b1fd-1d4aeff4d8c2",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe `strlen` function in C and C++ is used to find the length of a string. However, it can lead to vulnerabilities if not used properly. The function counts the number of characters in a string until it reaches a null character (`\\0`). If the string is not properly null-terminated, `strlen` can continue reading past the intended boundary, leading to buffer over-read, which can cause crashes, information leaks, or potentially code execution.\n\nIn the provided code snippet `strlen(\"heap\")`, there is no direct vulnerability as the string is a string literal which is automatically null-terminated by the compiler. However, if the string was user input or read from an untrusted source, it could potentially not be null-terminated and lead to a vulnerability.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, always ensure that strings are properly null-terminated before passing them to `strlen`. If the string is user input or from an untrusted source, consider using safer alternatives such as `strnlen`, which takes a maximum length parameter and will not read past this length, even if it does not encounter a null character.\n\n## Source Code Fix Recommendation\n\nIf the string `\"heap\"` was replaced with a user-provided string, the code could be fixed as follows:\n\n```cpp\n#include <string.h>\n\nchar user_input[256];\n// ... (code to read user input into user_input)\nuser_input[sizeof(user_input) - 1] = '\\0'; // Ensure null-termination\nsize_t length = strlen(user_input);\n```\n\n## Library Dependencies\n\nThe `strlen` function is part of the C standard library, so no additional libraries are needed to use it.\n\n## References\n\n- [OWASP C/C++ Vulnerabilities](https://owasp.org/www-pdf-archive/OWASP_SCP_Quick_Reference_Guide_v2.pdf)\n- [CWE-126: Buffer Over-read](https://cwe.mitre.org/data/definitions/126.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS140021"
+                ]
+              }
+            },
+            {
+              "id": "glog-9445be99-1a5a-441c-b1b0-b10ac65df3a6",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe `strlen` function in C++ is used to find the length of a string. However, it can lead to vulnerabilities if not used properly. The function counts the number of characters in a string up to but not including the first null character. If the string is not null-terminated, `strlen` will continue reading memory until it encounters a null character, potentially leading to buffer overflows, memory corruption, and other undefined behavior.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, always ensure that your strings are null-terminated. Avoid using `strlen` on strings that may not be null-terminated. Instead, consider using safer alternatives that take the size of the buffer as an argument, such as `strnlen`.\n\n## Source Code Fix Recommendation\n\nInstead of using `strlen(\"global\")`, consider using `sizeof(\"global\") - 1`. The `sizeof` operator returns the size of the string including the null character, so subtracting 1 gives the length of the string.\n\n```cpp\n#include <iostream>\n\nint main() {\n    const char* str = \"global\";\n    size_t len = sizeof(str) - 1;\n    std::cout << \"Length of string is \" << len << std::endl;\n    return 0;\n}\n```\n\n## Library Dependencies\n\nThe code example requires the following library dependencies:\n\n- iostream\n\n## References\n\n- [OWASP C++ Secure Coding Practices](https://cheatsheetseries.owasp.org/cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.html)\n- [CWE-126: Buffer Over-read](https://cwe.mitre.org/data/definitions/126.html)\n\nPlease note that the links provided are active and accessible to anonymous users at the time of writing."
+              },
+              "properties": {
+                "tags": [
+                  "DS140021"
+                ]
+              }
+            },
+            {
+              "id": "glog-a5755dc8-f791-43c4-810f-8577a89ff5f3",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe vulnerability in question is related to the `malloc` function in C++. `malloc` is a function that dynamically allocates memory at runtime. The vulnerability arises when the size of the memory to be allocated is not properly validated or controlled, leading to potential buffer overflows, memory corruption, or other related issues.\n\nIn the provided code snippet, `malloc(sizeof(MPI_Status))`, the size of the memory to be allocated is determined by the size of `MPI_Status`. If the size of `MPI_Status` is not properly controlled or validated, it could lead to the aforementioned issues.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to always validate and control the size of the memory to be allocated. This can be done by ensuring that the size of the memory to be allocated is within a reasonable and expected range. Additionally, it is also recommended to always check the return value of `malloc` to ensure that the memory allocation was successful.\n\n## Source Code Fix Recommendation\n\nHere is a simple fix for the provided code snippet:\n\n```cpp\nMPI_Status* status = (MPI_Status*) malloc(sizeof(MPI_Status));\nif (status == NULL) {\n    // Handle error\n} else {\n    // Continue with program\n}\n```\n\nIn this fixed code snippet, the return value of `malloc` is checked to ensure that the memory allocation was successful. If `malloc` returns `NULL`, it means that the memory allocation failed, and the error is handled accordingly.\n\n## Library Dependencies\n\nThe provided code snippet requires the MPI (Message Passing Interface) library to execute properly.\n\n## OWASP and CWE Links\n\n- [CWE-131: Incorrect Calculation of Buffer Size](https://cwe.mitre.org/data/definitions/131.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-ef6fee95-69ba-4d24-829d-32fb1ef40a0d",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe vulnerability in question is related to the incorrect usage of the `malloc` function in C++. The `malloc` function is used to dynamically allocate memory at runtime. The issue arises when the size of the memory to be allocated is not correctly calculated, leading to potential buffer overflows, memory leaks, or other unexpected behavior.\n\nIn the provided code snippet, `malloc(sizeof(double *)` is allocating memory of the size of a pointer to a double, not the size of a double itself. This can lead to issues if the allocated memory is used to store a double value, as the size of a double is typically larger than the size of a pointer.\n\n## Mitigation Advice\n\nTo mitigate this issue, ensure that the correct size is passed to the `malloc` function. If you are intending to allocate memory for a double, use `sizeof(double)` instead of `sizeof(double *)`.\n\n## Source Code Fix Recommendation\n\nHere is the corrected code:\n\n```cpp\ndouble* ptr = (double*) malloc(sizeof(double));\n```\n\nThis code correctly allocates memory of the size of a double.\n\n## Library Dependencies\n\nThe `malloc` function is part of the C Standard Library, so no additional libraries are needed for this code to execute properly.\n\n## Resources\n\n- [OWASP C/C++ Vulnerabilities](https://owasp.org/www-pdf-archive/OWASP_SCP_Quick_Reference_Guide_v2.pdf)\n\n## Common Weakness Enumeration (CWE)\n\nThis vulnerability is related to [CWE-131: Incorrect Calculation of Buffer Size](https://cwe.mitre.org/data/definitions/131.html)."
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-5a60dcf2-fa0c-4b0c-b7ed-74da903c9ba2",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe vulnerability in question is related to the `malloc` function in C++. `malloc` is a function that dynamically allocates memory at runtime. The vulnerability arises when the size of the memory to be allocated is not properly validated or controlled, leading to potential buffer overflows, memory corruption, or other related issues. This can lead to unpredictable program behavior, crashes, or even code execution.\n\nIn the provided code snippet, `malloc(sizeof(MPI_Request))`, the vulnerability could arise if the size of `MPI_Request` is not properly controlled or validated.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to:\n\n1. Always validate and control the size of the memory to be allocated.\n2. Use functions that limit the amount of memory allocated, such as `calloc`.\n3. Always check the return value of `malloc` to ensure that the memory allocation was successful.\n4. Free any dynamically allocated memory when it is no longer needed to prevent memory leaks.\n\n## Source Code Fix Recommendation\n\nHere is a recommended fix for the provided code snippet:\n\n```cpp\nMPI_Request* request = (MPI_Request*) malloc(sizeof(MPI_Request));\nif (request == NULL) {\n    // Handle error\n} else {\n    // Use request\n    // ...\n    free(request); // Don't forget to free the memory when you're done\n}\n```\n\n## Library Dependencies\n\nThe code example requires the MPI library to execute properly.\n\n## OWASP and CWE Links\n\n- [CWE-131: Incorrect Calculation of Buffer Size](https://cwe.mitre.org/data/definitions/131.html)\n\nPlease note that the links provided are active and accessible to anonymous users at the time of writing this report."
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-e0f7c95f-2158-44b5-b19a-4a3a0e8e05c2",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Issue with C Function (malloc)\" vulnerability in C++ typically arises from improper use of the `malloc` function, which is used to allocate memory dynamically. The specific vulnerability sink `malloc(sizeof(double)` indicates a potential issue where the size of the memory allocated may not be sufficient for the intended use, or the allocation may not be properly checked for success, leading to undefined behavior, memory corruption, or application crashes.\n\n### General Mitigation Advice\n\n1. **Check for Allocation Success**: Always check if `malloc` returns `NULL`, which indicates that the memory allocation failed.\n2. **Use `sizeof` Correctly**: Ensure that the `sizeof` operator is used correctly to allocate the appropriate amount of memory.\n3. **Initialize Allocated Memory**: Consider using `calloc` instead of `malloc` if you need the allocated memory to be initialized to zero.\n4. **Free Allocated Memory**: Always free the allocated memory using `free` to prevent memory leaks.\n5. **Use Safer Alternatives**: In C++, prefer using `new` and `delete` or smart pointers like `std::unique_ptr` and `std::shared_ptr` for memory management.\n\n### Source Code Fix Recommendation\n\nHere is a corrected version of the code snippet using `malloc`:\n\n```cpp\n#include <cstdlib>  // Required for malloc and free\n#include <iostream> // Required for std::cout\n\nint main() {\n    // Correctly allocate memory for one double\n    double* ptr = (double*)malloc(sizeof(double));\n    \n    // Check if allocation was successful\n    if (ptr == nullptr) {\n        std::cerr << \"Memory allocation failed\" << std::endl;\n        return 1;\n    }\n\n    // Use the allocated memory\n    *ptr = 3.14;\n    std::cout << \"Value: \" << *ptr << std::endl;\n\n    // Free the allocated memory\n    free(ptr);\n\n    return 0;\n}\n```\n\n### Library Dependencies\n\n- `<cstdlib>`: Required for `malloc` and `free`.\n- `<iostream>`: Required for input and output operations.\n\n### OWASP Resources\n\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n- [OWASP Secure Coding Practices](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-122: Heap-based Buffer Overflow](https://cwe.mitre.org/data/definitions/122.html)\n- [CWE-401: Missing Release of Memory after Effective Lifetime](https://cwe.mitre.org/data/definitions/401.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-f9c80452-13ca-4599-a5d2-65949534298e",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe `strlen` function in C++ is used to find the length of a string. However, it can lead to vulnerabilities if not used properly. The function counts the number of characters in a string up to but not including the first null character. If the string is not null-terminated, `strlen` will continue reading memory until it encounters a null character, potentially leading to buffer overflows, memory corruption, and other undefined behavior.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, always ensure that your strings are null-terminated. Avoid using `strlen` on strings that may not be null-terminated. Instead, consider using safer alternatives that take the size of the buffer as an argument, such as `strnlen`.\n\n## Source Code Fix Recommendation\n\nInstead of using `strlen(\"global\")`, consider using `sizeof(\"global\") - 1`. The `sizeof` operator returns the size of the string including the null character, so subtracting 1 gives the length of the string.\n\n```cpp\n#include <iostream>\n\nint main() {\n    const char* str = \"global\";\n    size_t len = sizeof(str) - 1;\n    std::cout << \"Length of string is \" << len << std::endl;\n    return 0;\n}\n```\n\n## Library Dependencies\n\nThe code example requires the following library dependencies:\n\n- iostream\n\n## References\n\n- [OWASP C++ Secure Coding Practices](https://cheatsheetseries.owasp.org/cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.html)\n- [CWE-126: Buffer Over-read](https://cwe.mitre.org/data/definitions/126.html)\n\nPlease note that the links provided are active and accessible to anonymous users at the time of writing."
+              },
+              "properties": {
+                "tags": [
+                  "DS140021"
+                ]
+              }
+            },
+            {
+              "id": "glog-7f7f1010-a076-438e-a8f7-e084cc748ec2",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe `strlen` function in C and C++ is used to find the length of a string. However, it can lead to vulnerabilities if not used properly. The function counts the number of characters in a string until it reaches a null character (`\\0`). If the string is not properly null-terminated, `strlen` can continue reading past the intended boundary, leading to buffer over-read, which can cause crashes, information leaks, or potentially code execution.\n\nIn the provided code snippet `strlen(\"heap\")`, there is no direct vulnerability as the string is a string literal which is automatically null-terminated by the compiler. However, if the string was user input or read from an untrusted source, it could potentially not be null-terminated and lead to a vulnerability.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, always ensure that strings are properly null-terminated before passing them to `strlen`. If the string is user input or from an untrusted source, consider using safer alternatives such as `strnlen`, which takes a maximum length parameter and will not read past this length, even if it does not encounter a null character.\n\n## Source Code Fix Recommendation\n\nIf the string `\"heap\"` was replaced with a user-provided string, the code could be fixed as follows:\n\n```cpp\n#include <string.h>\n\nchar user_input[256];\n// ... (code to read user input into user_input)\nuser_input[sizeof(user_input) - 1] = '\\0'; // Ensure null-termination\nsize_t length = strlen(user_input);\n```\n\n## Library Dependencies\n\nThe `strlen` function is part of the C standard library, so no additional libraries are needed to use it.\n\n## References\n\n- [OWASP C/C++ Vulnerabilities](https://owasp.org/www-pdf-archive/OWASP_SCP_Quick_Reference_Guide_v2.pdf)\n- [CWE-126: Buffer Over-read](https://cwe.mitre.org/data/definitions/126.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS140021"
+                ]
+              }
+            },
+            {
+              "id": "glog-9f65e083-d0b9-45de-9852-62fe74e83926",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe vulnerability in question is related to the `malloc` function in C++. `malloc` is a function that dynamically allocates memory at runtime. The vulnerability arises when the size of the memory to be allocated is not properly validated or controlled, leading to potential buffer overflows, memory corruption, or other related issues. This can lead to unpredictable program behavior, crashes, or even code execution.\n\nIn the provided code snippet, `malloc(sizeof(MPI_Request))`, the vulnerability could arise if the size of `MPI_Request` is not properly controlled or validated.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to:\n\n1. Always validate and control the size of the memory to be allocated.\n2. Use functions that limit the amount of memory allocated, such as `calloc`.\n3. Always check the return value of `malloc` to ensure that the memory allocation was successful.\n4. Free any dynamically allocated memory when it is no longer needed to prevent memory leaks.\n\n## Source Code Fix Recommendation\n\nHere is a recommended fix for the provided code snippet:\n\n```cpp\nMPI_Request* request = (MPI_Request*) malloc(sizeof(MPI_Request));\nif (request == NULL) {\n    // Handle error\n} else {\n    // Use request\n    // ...\n    free(request); // Don't forget to free the memory when you're done\n}\n```\n\n## Library Dependencies\n\nThe code example requires the MPI library to execute properly.\n\n## OWASP and CWE Links\n\n- [CWE-131: Incorrect Calculation of Buffer Size](https://cwe.mitre.org/data/definitions/131.html)\n\nPlease note that the links provided are active and accessible to anonymous users at the time of writing this report."
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            },
+            {
+              "id": "glog-5077f8f6-2f36-4e4f-8674-0af261ef997d",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe vulnerability in question is related to the `malloc` function in C++. `malloc` is a function that dynamically allocates memory at runtime. The vulnerability arises when the size of the memory to be allocated is not properly validated or controlled, leading to potential buffer overflows, memory corruption, or other related issues.\n\nIn the provided code snippet, `malloc(sizeof(MPI_Status))`, the size of the memory to be allocated is determined by the size of `MPI_Status`. If the size of `MPI_Status` is not properly controlled or validated, it could lead to the aforementioned issues.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to always validate and control the size of the memory to be allocated. This can be done by ensuring that the size of the memory to be allocated is within a reasonable and expected range. Additionally, it is also recommended to always check the return value of `malloc` to ensure that the memory allocation was successful.\n\n## Source Code Fix Recommendation\n\nHere is a simple fix for the provided code snippet:\n\n```cpp\nMPI_Status* status = (MPI_Status*) malloc(sizeof(MPI_Status));\nif (status == NULL) {\n    // Handle error\n} else {\n    // Continue with program\n}\n```\n\nIn this fixed code snippet, the return value of `malloc` is checked to ensure that the memory allocation was successful. If `malloc` returns `NULL`, it means that the memory allocation failed, and the error is handled accordingly.\n\n## Library Dependencies\n\nThe provided code snippet requires the MPI (Message Passing Interface) library to execute properly.\n\n## OWASP and CWE Links\n\n- [CWE-131: Incorrect Calculation of Buffer Size](https://cwe.mitre.org/data/definitions/131.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS161085"
+                ]
+              }
+            }
+          ],
+          "language": "en-US",
+          "contents": [
+            "localizedData",
+            "nonLocalizedData"
+          ],
+          "isComprehensive": false
+        }
+      },
+      "language": "en-US",
+      "results": [
+        {
+          "ruleId": "glog-935f75c5-3ef5-4a75-a703-1693afe5bde8",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Detected Vulnerability in C Function (malloc)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "mpi/collective/osu_coll.c"
+                },
+                "region": {
+                  "startLine": 1223,
+                  "startColumn": 17,
+                  "endLine": 1223,
+                  "endColumn": 43,
+                  "charOffset": 33249,
+                  "charLength": 26,
+                  "snippet": {
+                    "text": "malloc(DIM * sizeof(float)",
+                    "rendered": {
+                      "text": "malloc(DIM * sizeof(float)",
+                      "markdown": "`malloc(DIM * sizeof(float)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "mpi/collective/osu_coll.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 33249,
+                        "charLength": 26
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-5b3e863c-c360-484e-9118-6d373a2d3514",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Detected Vulnerability in C Function (malloc)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "mpi/collective/osu_coll.c"
+                },
+                "region": {
+                  "startLine": 1222,
+                  "startColumn": 17,
+                  "endLine": 1222,
+                  "endColumn": 43,
+                  "charOffset": 33203,
+                  "charLength": 26,
+                  "snippet": {
+                    "text": "malloc(DIM * sizeof(float)",
+                    "rendered": {
+                      "text": "malloc(DIM * sizeof(float)",
+                      "markdown": "`malloc(DIM * sizeof(float)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "mpi/collective/osu_coll.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 33203,
+                        "charLength": 26
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-18fd05af-d2f6-48ef-af0d-2cf4c18add17",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Detected Vulnerability in C Function (malloc)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "mpi/collective/osu_coll.c"
+                },
+                "region": {
+                  "startLine": 1219,
+                  "startColumn": 24,
+                  "endLine": 1219,
+                  "endColumn": 50,
+                  "charOffset": 33150,
+                  "charLength": 26,
+                  "snippet": {
+                    "text": "malloc(DIM * sizeof(float)",
+                    "rendered": {
+                      "text": "malloc(DIM * sizeof(float)",
+                      "markdown": "`malloc(DIM * sizeof(float)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "mpi/collective/osu_coll.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 33150,
+                        "charLength": 26
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-848a7db5-af9b-40b0-9190-d1360509dac8",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Detected Vulnerability in C Function (malloc)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "mpi/collective/osu_coll.c"
+                },
+                "region": {
+                  "startLine": 1216,
+                  "startColumn": 18,
+                  "endLine": 1216,
+                  "endColumn": 46,
+                  "charOffset": 33062,
+                  "charLength": 28,
+                  "snippet": {
+                    "text": "malloc(DIM * sizeof(float *)",
+                    "rendered": {
+                      "text": "malloc(DIM * sizeof(float *)",
+                      "markdown": "`malloc(DIM * sizeof(float *)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "mpi/collective/osu_coll.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 33062,
+                        "charLength": 28
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-9f2df9ea-ce17-462b-b1fd-1d4aeff4d8c2",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Detected Vulnerability in C Function (strlen)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "openshmem/osu_oshm_get.c"
+                },
+                "region": {
+                  "startLine": 81,
+                  "startColumn": 37,
+                  "endLine": 81,
+                  "endColumn": 51,
+                  "charOffset": 1741,
+                  "charLength": 14,
+                  "snippet": {
+                    "text": "strlen(\"heap\")",
+                    "rendered": {
+                      "text": "strlen(\"heap\")",
+                      "markdown": "`strlen(\"heap\")`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If a string is missing a null terminator, strlen will read past the end of the buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "openshmem/osu_oshm_get.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 1741,
+                        "charLength": 14
+                      },
+                      "insertedContent": {
+                        "text": "strlen_s(\"heap\", <size of \"heap\">)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "description": {
+                "text": "If a string is missing a null terminator, strlen will read past the end of the buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "openshmem/osu_oshm_get.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 1741,
+                        "charLength": 14
+                      },
+                      "insertedContent": {
+                        "text": "strnlen(\"heap\", <size of \"heap\">)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-9445be99-1a5a-441c-b1b0-b10ac65df3a6",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Detected Vulnerability in C Function (strlen)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "openshmem/osu_oshm_get.c"
+                },
+                "region": {
+                  "startLine": 83,
+                  "startColumn": 46,
+                  "endLine": 83,
+                  "endColumn": 62,
+                  "charOffset": 1827,
+                  "charLength": 16,
+                  "snippet": {
+                    "text": "strlen(\"global\")",
+                    "rendered": {
+                      "text": "strlen(\"global\")",
+                      "markdown": "`strlen(\"global\")`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If a string is missing a null terminator, strlen will read past the end of the buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "openshmem/osu_oshm_get.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 1827,
+                        "charLength": 16
+                      },
+                      "insertedContent": {
+                        "text": "strlen_s(\"global\", <size of \"global\">)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "description": {
+                "text": "If a string is missing a null terminator, strlen will read past the end of the buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "openshmem/osu_oshm_get.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 1827,
+                        "charLength": 16
+                      },
+                      "insertedContent": {
+                        "text": "strnlen(\"global\", <size of \"global\">)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-a5755dc8-f791-43c4-810f-8577a89ff5f3",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Detected Vulnerability in C Function (malloc)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "mpi/pt2pt/osu_mbw_mr.c"
+                },
+                "region": {
+                  "startLine": 260,
+                  "startColumn": 31,
+                  "endLine": 260,
+                  "endColumn": 56,
+                  "charOffset": 6865,
+                  "charLength": 25,
+                  "snippet": {
+                    "text": "malloc(sizeof(MPI_Status)",
+                    "rendered": {
+                      "text": "malloc(sizeof(MPI_Status)",
+                      "markdown": "`malloc(sizeof(MPI_Status)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "mpi/pt2pt/osu_mbw_mr.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 6865,
+                        "charLength": 25
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-ef6fee95-69ba-4d24-829d-32fb1ef40a0d",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Detected Vulnerability in C Function (malloc)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "mpi/pt2pt/osu_mbw_mr.c"
+                },
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 39,
+                  "endLine": 191,
+                  "endColumn": 62,
+                  "charOffset": 4786,
+                  "charLength": 23,
+                  "snippet": {
+                    "text": "malloc(sizeof(double *)",
+                    "rendered": {
+                      "text": "malloc(sizeof(double *)",
+                      "markdown": "`malloc(sizeof(double *)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "mpi/pt2pt/osu_mbw_mr.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 4786,
+                        "charLength": 23
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-5a60dcf2-fa0c-4b0c-b7ed-74da903c9ba2",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Detected Vulnerability in C Function (malloc)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "mpi/pt2pt/osu_mbw_mr.c"
+                },
+                "region": {
+                  "startLine": 259,
+                  "startColumn": 32,
+                  "endLine": 259,
+                  "endColumn": 58,
+                  "charOffset": 6791,
+                  "charLength": 26,
+                  "snippet": {
+                    "text": "malloc(sizeof(MPI_Request)",
+                    "rendered": {
+                      "text": "malloc(sizeof(MPI_Request)",
+                      "markdown": "`malloc(sizeof(MPI_Request)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "mpi/pt2pt/osu_mbw_mr.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 6791,
+                        "charLength": 26
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-e0f7c95f-2158-44b5-b19a-4a3a0e8e05c2",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "\"Detected Issue with C Function (malloc)\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "mpi/pt2pt/osu_mbw_mr.c"
+                },
+                "region": {
+                  "startLine": 194,
+                  "startColumn": 44,
+                  "endLine": 194,
+                  "endColumn": 65,
+                  "charOffset": 4905,
+                  "charLength": 21,
+                  "snippet": {
+                    "text": "malloc(sizeof(double)",
+                    "rendered": {
+                      "text": "malloc(sizeof(double)",
+                      "markdown": "`malloc(sizeof(double)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "mpi/pt2pt/osu_mbw_mr.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 4905,
+                        "charLength": 21
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-f9c80452-13ca-4599-a5d2-65949534298e",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Detected Vulnerability in C Function (strlen)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "openshmem/osu_oshm_put.c"
+                },
+                "region": {
+                  "startLine": 83,
+                  "startColumn": 46,
+                  "endLine": 83,
+                  "endColumn": 62,
+                  "charOffset": 1827,
+                  "charLength": 16,
+                  "snippet": {
+                    "text": "strlen(\"global\")",
+                    "rendered": {
+                      "text": "strlen(\"global\")",
+                      "markdown": "`strlen(\"global\")`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If a string is missing a null terminator, strlen will read past the end of the buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "openshmem/osu_oshm_put.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 1827,
+                        "charLength": 16
+                      },
+                      "insertedContent": {
+                        "text": "strlen_s(\"global\", <size of \"global\">)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "description": {
+                "text": "If a string is missing a null terminator, strlen will read past the end of the buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "openshmem/osu_oshm_put.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 1827,
+                        "charLength": 16
+                      },
+                      "insertedContent": {
+                        "text": "strnlen(\"global\", <size of \"global\">)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-7f7f1010-a076-438e-a8f7-e084cc748ec2",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Detected Vulnerability in C Function (strlen)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "openshmem/osu_oshm_put.c"
+                },
+                "region": {
+                  "startLine": 81,
+                  "startColumn": 37,
+                  "endLine": 81,
+                  "endColumn": 51,
+                  "charOffset": 1741,
+                  "charLength": 14,
+                  "snippet": {
+                    "text": "strlen(\"heap\")",
+                    "rendered": {
+                      "text": "strlen(\"heap\")",
+                      "markdown": "`strlen(\"heap\")`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If a string is missing a null terminator, strlen will read past the end of the buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "openshmem/osu_oshm_put.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 1741,
+                        "charLength": 14
+                      },
+                      "insertedContent": {
+                        "text": "strlen_s(\"heap\", <size of \"heap\">)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "description": {
+                "text": "If a string is missing a null terminator, strlen will read past the end of the buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "openshmem/osu_oshm_put.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 1741,
+                        "charLength": 14
+                      },
+                      "insertedContent": {
+                        "text": "strnlen(\"heap\", <size of \"heap\">)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-9f65e083-d0b9-45de-9852-62fe74e83926",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Detected Vulnerability in C Function (malloc)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "mpi/pt2pt/osu_mbw_mr.c"
+                },
+                "region": {
+                  "startLine": 184,
+                  "startColumn": 33,
+                  "endLine": 184,
+                  "endColumn": 59,
+                  "charOffset": 4558,
+                  "charLength": 26,
+                  "snippet": {
+                    "text": "malloc(sizeof(MPI_Request)",
+                    "rendered": {
+                      "text": "malloc(sizeof(MPI_Request)",
+                      "markdown": "`malloc(sizeof(MPI_Request)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "mpi/pt2pt/osu_mbw_mr.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 4558,
+                        "charLength": 26
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-5077f8f6-2f36-4e4f-8674-0af261ef997d",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Detected Vulnerability in C Function (malloc)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "mpi/pt2pt/osu_mbw_mr.c"
+                },
+                "region": {
+                  "startLine": 185,
+                  "startColumn": 32,
+                  "endLine": 185,
+                  "endColumn": 57,
+                  "charOffset": 4633,
+                  "charLength": 25,
+                  "snippet": {
+                    "text": "malloc(sizeof(MPI_Status)",
+                    "rendered": {
+                      "text": "malloc(sizeof(MPI_Status)",
+                      "markdown": "`malloc(sizeof(MPI_Status)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the value provided to malloc is the result of unsafe integer math, it can result in an exploitable condition. "
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "mpi/pt2pt/osu_mbw_mr.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 4633,
+                        "charLength": 25
+                      },
+                      "insertedContent": {
+                        "text": "calloc(<number of elements>, <size of each element>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        }
+      ],
+      "newlineSequences": [
+        "\r\n",
+        "\n"
+      ]
+    }
+  ]
+}
